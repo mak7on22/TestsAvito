@@ -1,0 +1,48 @@
+﻿@model test.Models.Categors.Subcategory
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Subcategory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SubcategoryName" class="control-label"></label>
+                <input asp-for="SubcategoryName" class="form-control" />
+                <span asp-validation-for="SubcategoryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="СategoryId" class="control-label"></label>
+                <input asp-for="СategoryId" class="form-control" readonly />
+                <span asp-validation-for="СategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categorys.CategoryName"></label>
+                <input asp-for="Categorys.CategoryName" class="form-control" />
+                <span asp-validation-for="Categorys.CategoryName" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="Categorys"></label>
+                <input asp-for="Categorys" class="form-control" readonly />
+                <span asp-validation-for="Categorys" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
